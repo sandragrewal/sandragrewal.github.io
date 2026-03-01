@@ -1,0 +1,24 @@
+{
+  "name": "sandragrewal.github.io",
+  "version": "1.0.0",
+  "description": "Growing Voices Speech and Language Therapy website",
+  "scripts": {
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./tailwind.input.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -c ./tailwind.config.js -i ./tailwind.input.css -o ./styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandragrewal/sandragrewal.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sandragrewal/sandragrewal.github.io/issues"
+  },
+  "homepage": "https://github.com/sandragrewal/sandragrewal.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
