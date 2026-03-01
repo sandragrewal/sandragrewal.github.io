@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Growing Voices Speech and Language Therapy, Chelmsford. Sandra Grewal offers specialist private paediatric speech and language therapy for children aged 2-18 in Essex. HCPC registered, RCSLT member.">
+    <title>Growing Voices Speech & Language Therapy | Sandra Grewal, Chelmsford, Essex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f6f7f4',
+                            100: '#e8ebe3',
+                            200: '#d4dbc9',
+                            300: '#b5c2a4',
+                            400: '#96a87f',
+                            500: '#7a8f62',
+                            600: '#5f724c',
+                            700: '#4b5a3d',
+                            800: '#3e4a34',
+                            900: '#353f2e',
+                        },
+                        cream: {
+                            50: '#fdfcf9',
+                            100: '#faf8f1',
+                            200: '#f5f0e3',
+                            300: '#ede5d0',
+                            400: '#e2d5b8',
+                        },
+                        forest: {
+                            600: '#3d5a45',
+                            700: '#2f4736',
+                            800: '#243528',
+                        },
+                        apricot: {
+                            50: '#fef9f6',
+                            100: '#fdf2eb',
+                            200: '#fbe5d6',
+                            300: '#f7d0b8',
+                            400: '#f2b896',
+                            500: '#e9a07a',
+                            600: '#d4845c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Nunito:wght@300;400;500;600&display=swap');
+
+        .font-serif-display {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .font-body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* Organic blob shapes */
+        .blob-1 {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .blob-2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        /* Leaf decorations */
+        .leaf-decoration::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, transparent 40%, rgba(150, 168, 127, 0.15) 40%);
+            border-radius: 0 100% 0 100%;
+            transform: rotate(-30deg);
+        }
+
+        /* Gentle wave divider */
+        .wave-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        .wave-divider::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, currentColor 0%, currentColor 50%, transparent 50%);
+            background-size: 100px 160px;
+            background-position: 0 -80px;
+            background-repeat: repeat-x;
+        }
+
+        /* Smooth transitions */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-body bg-cream-50 text-forest-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream-50/95 backdrop-blur-sm border-b border-sage-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="#hero" class="font-serif-display text-xl md:text-2xl text-forest-700 font-medium">
+                    Growing Voices
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-forest-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-forest-700 hover:text-sage-600 transition-colors text-sm tracking-wide">About</a>
+                    <a href="#expect" class="nav-link text-forest-700 hover:text-sage-600 transition-colors text-sm tracking-wide">Services</a>
+                    <a href="#prices" class="nav-link text-forest-700 hover:text-sage-600 transition-colors text-sm tracking-wide">Pricing</a>
+                    <a href="#faq" class="nav-link text-forest-700 hover:text-sage-600 transition-colors text-sm tracking-wide">FAQ</a>
+                    <a href="#contact" class="bg-sage-500 hover:bg-sage-600 text-white px-5 py-2 rounded-full text-sm transition-all hover:shadow-lg">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#about" class="text-forest-700 hover:text-sage-600 py-2">About</a>
+                    <a href="#expect" class="text-forest-700 hover:text-sage-600 py-2">Services</a>
+                    <a href="#prices" class="text-forest-700 hover:text-sage-600 py-2">Pricing</a>
+                    <a href="#faq" class="text-forest-700 hover:text-sage-600 py-2">FAQ</a>
+                    <a href="#contact" class="bg-sage-500 text-white px-5 py-2 rounded-full text-center">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-sage-50 pt-24 pb-20 lg:pt-0 lg:pb-0">
+        <!-- Decorative elements -->
+        <div class="absolute top-20 right-0 w-64 h-64 md:w-96 md:h-96 bg-sage-200/30 blob-1 -mr-32"></div>
+        <div class="absolute bottom-20 left-0 w-48 h-48 md:w-72 md:h-72 bg-apricot-200/30 blob-2 -ml-24"></div>
+
+        <!-- Botanical decorations -->
+        <svg class="absolute top-32 left-8 w-16 h-24 text-sage-300/40 hidden md:block" viewBox="0 0 64 96" fill="currentColor">
+            <path d="M32 96V48M32 48C32 32 16 24 8 8C24 16 32 32 32 48ZM32 48C32 32 48 24 56 8C40 16 32 32 32 48Z"/>
+        </svg>
+        <svg class="absolute bottom-32 right-12 w-20 h-28 text-sage-400/30 hidden lg:block" viewBox="0 0 80 112" fill="currentColor">
+            <ellipse cx="40" cy="30" rx="25" ry="30" opacity="0.5"/>
+            <ellipse cx="25" cy="55" rx="20" ry="25" opacity="0.4"/>
+            <ellipse cx="55" cy="55" rx="20" ry="25" opacity="0.4"/>
+            <path d="M40 60V112" stroke="currentColor" stroke-width="3" fill="none"/>
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <!-- Mobile logo - shows above text on small screens -->
+                    <div class="lg:hidden mb-8">
+                        <img src="./logo.png" alt="Logo of a tree made up of speech bubbles, with silhouettes of children reaching up to the branches. Underneath is the text Growing Voices Speech and Language Therapy." class="w-64 sm:w-80 mx-auto rounded-full aspect-square object-cover">
+                    </div>
+
+                    <h1 class="font-serif-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-forest-800 mb-4 leading-tight">
+                        Growing Voices<br>
+                        <span class="text-sage-600 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Speech and Language Therapy<br></span>
+                        <span class="text-forest-700/80 text-xl sm:text-2xl md:text-3xl lg:text-4xl">with Sandra</span>
+                    </h1>
+                    <p class="text-forest-700/80 text-lg md:text-xl mb-4 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
+                        Helping communication blossom
+                    </p>
+                    <p class="text-forest-700/80 text-base md:text-lg mb-4 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
+                        Specialist Private Paediatric Speech and Language Therapy for children in Chelmsford, Essex
+                    </p>
+                    <p class="text-forest-700/70 text-base md:text-lg mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        Helping children and young people communicate with confidence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="bg-sage-500 hover:bg-sage-600 text-white px-8 py-3 rounded-full text-center transition-all hover:shadow-xl hover:-translate-y-0.5">
+                            Book a Consultation
+                        </a>
+                        <a href="#about" class="border-2 border-apricot-400 text-apricot-600 hover:bg-apricot-50 px-8 py-3 rounded-full text-center transition-all">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <img src="./logo.png" alt="Logo of a tree made up of speech bubbles, with silhouettes of children reaching up to the branches. Underneath is the text Growing Voices Speech and Language Therapy." class="w-full max-w-md mx-auto rounded-full aspect-square object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator - hidden on mobile -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
+            <svg class="w-6 h-6 text-sage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Home Intro Section -->
+    <section class="py-20 md:py-32 bg-sage-100 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-6 text-forest-700/80 leading-relaxed mb-16">
+                <p>
+                    I am Sandra Grewal, a highly specialist Speech and Language Therapist with over 8 years of experience supporting children aged 2–18 with speech, language and communication needs. I have extensive NHS experience and currently work as a senior therapist at a specialist speech, language and communication school.
+                </p>
+                <p>
+                    I provide private speech and language therapy for children and young people in <strong>Chelmsford and surrounding areas</strong>, offering play-based, family-centred support tailored to each child in their own home, nursery or school. My goal is to help children feel understood, confident and successful in their communication.
+                </p>
+            </div>
+
+            <!-- Worried section -->
+            <div class="mb-16 pt-16 border-t border-sage-200">
+                <h2 class="font-serif-display text-2xl md:text-3xl text-forest-800 mb-6">Worried about your child's speech or communication?</h2>
+                <ul class="space-y-2 text-forest-700/80 mb-6">
+                    <li>• Worried about your child's speech?</li>
+                    <li>• Not sure if their communication is developing as expected?</li>
+                    <li>• Want some advice and support?</li>
+                </ul>
+                <p class="text-forest-700/80 leading-relaxed mb-4">You're not alone — many families have these questions.</p>
+                <p class="text-forest-700/80 leading-relaxed">Children develop communication skills at different rates, and needing extra support is more common than people realise. Early speech and language therapy can reduce frustration, build confidence and support long-term learning. I work closely with families to create practical, positive therapy that fits into everyday life.</p>
+            </div>
+
+            <!-- How I can help -->
+            <div class="pt-16 border-t border-sage-200">
+                <h2 class="font-serif-display text-2xl md:text-3xl text-forest-800 mb-6">How I can help your child</h2>
+                <p class="text-forest-700/80 mb-4">I support children and young people with:</p>
+                <ul class="space-y-2 text-forest-700/80 mb-6">
+                    <li><span class="text-apricot-500">✔</span> Speech sound difficulties</li>
+                    <li><span class="text-apricot-500">✔</span> Language delays</li>
+                    <li><span class="text-apricot-500">✔</span> Autism communication support</li>
+                    <li><span class="text-apricot-500">✔</span> Selective mutism</li>
+                    <li><span class="text-apricot-500">✔</span> Social communication needs</li>
+                </ul>
+                <p class="text-forest-700/80 leading-relaxed">Therapy is personalised, evidence-based and designed to feel engaging and supportive for both children and parents.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white relative overflow-hidden">
+        <!-- Decorative leaf -->
+        <svg class="absolute top-12 right-8 w-24 h-32 text-sage-100 hidden md:block" viewBox="0 0 96 128" fill="currentColor">
+            <path d="M48 128V64M48 64C48 40 24 24 8 0C32 16 48 40 48 64ZM48 64C48 40 72 24 88 0C64 16 48 40 48 64Z" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-sage-100 blob-2 transform -rotate-3"></div>
+                        <div class="relative bg-gradient-to-br from-sage-200 via-sage-300 to-apricot-200 rounded-3xl p-4 aspect-[4/5]">
+                            <img src="./portrait.jpg" alt="Sandra Grewal, Speech and Language Therapist" class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <p class="text-sage-600 text-sm tracking-widest uppercase mb-3">About Me</p>
+                    <h2 class="font-serif-display text-3xl md:text-4xl lg:text-5xl text-forest-800 mb-6">
+                        Sandra Grewal – Specialist Speech and Language Therapist
+                    </h2>
+                    <div class="space-y-4 text-forest-700/80 leading-relaxed">
+                        <p>
+                            Hello — I'm Sandra, a highly specialist Speech and Language Therapist supporting <strong>children and young people aged 2–18</strong> with <strong>speech and language difficulties</strong>. I hold a <strong>Master's in Speech and Language Therapy (Distinction)</strong>.
+                        </p>
+                        <p>
+                            I began my career in the <strong>NHS</strong>, working with children with <strong>all types of speech, language, and communication needs (SLCN)</strong> — from speech sound difficulties and stammering to developmental language disorder and complex social communication challenges. This experience gave me a deep understanding of how children develop communication skills, the challenges families face, and how to tailor therapy to support <strong>every child's individual potential</strong>.
+                        </p>
+                        <p>
+                            I now work as a <strong>senior therapist in a specialist speech, language and communication school</strong>, supporting children with complex communication profiles.
+                        </p>
+                        <p>
+                            As a <strong>mother of two</strong>, I understand the daily pressures of family life — balancing work, school, and supporting your child's development can feel overwhelming. I know how important it is for parents to feel supported, informed, and confident in helping their child reach their full potential. My aim is to make therapy <strong>practical, achievable, and positive</strong>, so families can see real progress without adding stress to their daily routine.
+                        </p>
+                        <p>
+                            I offer <strong>home, school, and nursery visits</strong>, because children thrive in environments where they feel most comfortable. Providing therapy in familiar settings helps children engage more fully, making sessions more effective and meaningful.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Approach -->
+            <div class="max-w-4xl mx-auto mt-16 pt-16 border-t border-sage-200">
+                <h3 class="font-serif-display text-2xl md:text-3xl text-forest-800 mb-6">My Approach</h3>
+                <p class="text-forest-700/80 leading-relaxed mb-6">Every child communicates differently — therapy is never one-size-fits-all.</p>
+                <p class="text-forest-700/80 leading-relaxed mb-4">My approach is:</p>
+                <ul class="space-y-2 text-forest-700/80 mb-6">
+                    <li><strong>Play-based and engaging</strong></li>
+                    <li><strong>Family-centred and collaborative</strong></li>
+                    <li><strong>Neuro-affirming and respectful</strong></li>
+                    <li><strong>Evidence-informed</strong></li>
+                    <li><strong>Tailored to real-life communication</strong></li>
+                </ul>
+                <p class="text-forest-700/80 leading-relaxed">I focus on <strong>building confidence, reducing frustration, and helping children feel understood</strong>. Sessions are designed to be positive and practical, with strategies parents and nurseries/schools can use so progress continues beyond therapy.</p>
+            </div>
+
+            <!-- Working with Families -->
+            <div class="max-w-4xl mx-auto mt-12 pt-12 border-t border-sage-200">
+                <h3 class="font-serif-display text-2xl md:text-3xl text-forest-800 mb-6">Working with Families</h3>
+                <p class="text-forest-700/80 leading-relaxed mb-4">Parents are the most important partners in a child's communication journey. I work closely with families to understand each child's strengths, interests, and needs, creating therapy that fits into everyday life rather than adding pressure.</p>
+                <p class="text-forest-700/80 leading-relaxed">Whether your child needs <strong>speech therapy for speech sound difficulties</strong> or <strong>language therapy for developmental delays</strong>, my goal is to make the process <strong>clear, supportive, and empowering</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="expect" class="py-20 md:py-32 bg-gradient-to-b from-sage-100 via-sage-50 to-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-40 h-40 bg-apricot-200/30 blob-1 -ml-20 -mt-20"></div>
+        <div class="absolute bottom-0 right-0 w-56 h-56 bg-sage-200/20 blob-2 -mr-28 -mb-28"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <p class="text-sage-600 text-sm tracking-widest uppercase mb-3">Services</p>
+                <h2 class="font-serif-display text-3xl md:text-4xl lg:text-5xl text-forest-800 mb-4">
+                    What to Expect
+                </h2>
+                <div class="text-forest-700/70 max-w-3xl mx-auto space-y-4">
+                    <p>At <strong>Growing Voices Speech and Language Therapy</strong>, I provide <strong>specialist assessment and therapy for children and young people aged 2–18</strong>. My focus is on helping children develop <strong>speech, language, and communication skills</strong> in a way that is <strong>play-based, family-centred, and achievable in everyday life</strong>.</p>
+                    <p>Therapy can take place in <strong>your home, school, or nursery</strong>, because children thrive in environments where they feel most comfortable.</p>
+                </div>
+            </div>
+
+            <!-- How Therapy Works -->
+            <div class="mb-16">
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
+                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">1. Complimentary telephone consultation</h4>
+                        <p class="text-forest-700/80">After contact is made there will be a Complimentary telephone consultation to discuss your initial concerns and how speech and language therapy may help. This is also an opportunity to talk through the available options and next steps, ensuring you feel informed and supported from the outset   .</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="py-3">
+                        <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
+                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">2. Initial Assessment</h4>
+                        <p class="text-forest-700/80">We will then schedule an initial assessment at your home tailored to your child's needs. These take about an hour and will involve gathering information from you, observing your child's speech and language during play and completing formal and informal assessments. I will provide you with a summary report and recommendations following the assessment.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="py-3">
+                        <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
+                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">3a. Therapy Sessions</h4>
+                        <p class="text-forest-700/80">Together we will decide whether therapy is appropriate and agree a set of targets for your child that will form the basis of therapy, taking into account their needs, readiness, and motivation. There is no requirement to commit to a set number of sessions, allowing flexibility based on your child’s progress and your family’s needs. I will recommend the number and frequency of sessions and keep you updated on progress, adjusting plans where needed. Sessions last 30–45 minutes and are designed to be fun and engaging to support learning.</p>
+
+                        <div class="flex items-center my-6">
+                            <div class="flex-1 border-t border-sage-300"></div>
+                            <span class="px-4 font-serif-display text-lg text-sage-500">OR</span>
+                            <div class="flex-1 border-t border-sage-300"></div>
+                        </div>
+
+                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">3b. Review</h4>
+                        <p class="text-forest-700/80">If therapy is not appropriate at this time, or you feel comfortable following advice independently, a review session can be arranged after an agreed period to monitor progress, review targets, and provide updated advice where needed. This can be offered upon request or to provide a more up-to-date report.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="py-3">
+                        <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
+                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">4. Working with Others</h4>
+                        <div class="text-forest-700/80 space-y-4">
+                            <p>If your child is known to an NHS Speech and Language Therapist or other professionals, including education staff, please let me know so we can work collaboratively. I will liaise with relevant professionals to support continuity of care. Any meetings or calls with other professionals will be agreed with you in advance and charged as outlined in the fee schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-forest-700/80 text-lg font-medium mb-6">Get in touch today to book a consultation and take the first step towards confident communication.</p>
+                <a href="#contact" class="inline-block bg-sage-500 hover:bg-sage-600 text-white px-8 py-4 rounded-full font-medium transition-all hover:shadow-xl hover:-translate-y-0.5">
+                    Book a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Prices Section -->
+    <section id="prices" class="py-20 md:py-32 bg-apricot-100 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sage-600 text-sm tracking-widest uppercase mb-3">Pricing</p>
+                <h2 class="font-serif-display text-3xl md:text-4xl lg:text-5xl text-forest-800 mb-4">
+                    Pricing
+                </h2>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <table class="w-full">
+                        <tbody class="divide-y divide-sage-100">
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Initial Assessment</p>
+                                    <p class="text-sm text-forest-700/70">(Including summary report outlining areas of need)</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£140</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Initial Assessment with Detailed report</p>
+                                    <p class="text-sm text-forest-700/70"><em>Includes case history and formal/informal assessment, based on need. Summary report is provided to explain assessment findings and recommendations, including areas of need.</em></p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£200</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Initial Assessment: Full Report</p>
+                                    <p class="text-sm text-forest-700/70">Includes a thorough assessment and report containing detailed analysis of assessment scores and findings, response to therapy and recommendations as well as impact needs will have on child's access to education. The report will form contribution towards Education, Health and Care Plans (EHCP).</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£400</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Follow-up Assessments (Reviews)</p>
+                                    <p class="text-sm text-forest-700/70">Summary report if required</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£70</span>
+                                    <span class="block text-sm text-forest-700/70">£50</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">School/Nursery observation/advice visit</p>
+                                    <p class="text-sm text-forest-700/70">Additional written advice</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£70</span>
+                                    <span class="block text-sm text-forest-700/70">£50</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Therapy Session</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£70</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-cream-50 transition-colors">
+                                <td class="px-6 py-5">
+                                    <p class="font-medium text-forest-800">Liaison meeting with other professionals</p>
+                                    <p class="text-sm text-forest-700/70">(depending on location and duration)</p>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <span class="font-serif-display text-2xl text-apricot-500">£30-£70</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Travel fees -->
+                <div class="mt-8 bg-cream-50 rounded-3xl p-6 md:p-8 border-l-4 border-apricot-300">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-4">Travel fees (return journey)</h3>
+                    <p class="text-forest-700/70 text-sm mb-4">
+                        <em>I do not charge travel for sessions that take place within a 3-mile radius of where we are based (CM1 6YT). All sessions outside of this area will be charged at 0.45p per mile for a return journey from CM1 6YT</em>
+                    </p>
+                    <p class="font-serif-display text-2xl text-apricot-500">£0.45p per mile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-32 bg-gradient-to-b from-white via-sage-100 to-sage-100 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sage-600 text-sm tracking-widest uppercase mb-3">FAQ</p>
+                <h2 class="font-serif-display text-3xl md:text-4xl lg:text-5xl text-forest-800 mb-4">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">How do I know if my child needs speech and language therapy?</h3>
+                    <p class="text-forest-700/80 mb-4">If you're worried about your child's speech, language, or communication, it's always worth asking. Signs might include unclear speech, difficulty understanding language, limited vocabulary, frustration when communicating, or struggling to express themselves compared to peers.</p>
+                    <p class="text-forest-700/80">Many children benefit from early support, and an initial consultation can help clarify whether therapy is needed and what next steps would be helpful.</p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">What age children do you work with?</h3>
+                    <p class="text-forest-700/80">I work with <strong>children and young people aged 2–18</strong> who are verbal or developing verbal communication.</p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">What difficulties do you specialise in?</h3>
+                    <p class="text-forest-700/80 mb-3">I specialise in:</p>
+                    <ul class="space-y-2 text-forest-700/80">
+                        <li>• Speech disorders and speech sound difficulties</li>
+                        <li>• Language disorders and developmental language delays</li>
+                        <li>• Developmental Language Disorder (DLD)</li>
+                        <li>• Selective mutism</li>
+                        <li>• Social communication difficulties</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">Where do therapy sessions take place?</h3>
+                    <p class="text-forest-700/80">I offer <strong>home visits, school visits, and nursery visits in Chelmsford and surrounding areas</strong>. Children often engage better in environments where they feel comfortable, which helps therapy feel natural and effective.</p>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">What happens at the first appointment?</h3>
+                    <p class="text-forest-700/80 mb-4">The first appointment is usually a <strong>consultation and assessment</strong>. We talk through your concerns, your child's history, and your goals. I carry out a child-friendly assessment to understand strengths and needs. After this, I provide clear feedback and recommendations.</p>
+                    <p class="text-forest-700/80">There is no pressure to commit to ongoing therapy — the aim is to give you clarity and guidance.</p>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">How long does therapy last?</h3>
+                    <p class="text-forest-700/80">This varies depending on your child's needs. Some children benefit from short-term targeted support, while others need longer-term therapy. We review progress regularly and adjust the plan together.</p>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">Do parents need to be involved?</h3>
+                    <p class="text-forest-700/80">Yes — parent involvement is a key part of successful therapy. I provide practical strategies you can use at home and guidance for schools or nurseries so your child gets consistent support.</p>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">Do you work with schools and nurseries?</h3>
+                    <p class="text-forest-700/80">Yes. I regularly liaise with teachers, SENCOs, and nursery staff to ensure strategies are carried over into everyday environments.</p>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
+                    <h3 class="font-serif-display text-xl text-forest-800 mb-3">How quickly will I see progress?</h3>
+                    <p class="text-forest-700/80">Every child is different. Progress depends on the nature of the difficulty, how often therapy takes place, and how strategies are supported at home and school. My goal is always meaningful, functional progress — helping children communicate more confidently in real life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <svg class="absolute bottom-0 left-0 w-32 h-40 text-sage-200/50 hidden md:block" viewBox="0 0 128 160" fill="currentColor">
+            <path d="M64 160V80M64 80C64 50 32 30 8 0C40 20 64 50 64 80ZM64 80C64 50 96 30 120 0C88 20 64 50 64 80Z" stroke="currentColor" stroke-width="3" fill="none"/>
+        </svg>
+        <svg class="absolute top-20 right-8 w-24 h-32 text-sage-200/30 hidden lg:block" viewBox="0 0 96 128" fill="currentColor">
+            <path d="M48 128V64M48 64C48 40 24 24 8 0C32 16 48 40 48 64ZM48 64C48 40 72 24 88 0C64 16 48 40 48 64Z" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <p class="text-sage-600 text-sm tracking-widest uppercase mb-3">Contact</p>
+                <h2 class="font-serif-display text-3xl md:text-4xl lg:text-5xl text-forest-800 mb-4">
+                    How do I get started?
+                </h2>
+                <p class="text-forest-700/70 max-w-2xl mx-auto">
+                    You can contact me to book an initial consultation. We'll discuss your concerns and decide together whether speech and language therapy is the right next step.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Contact Information -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <h3 class="font-serif-display text-2xl text-forest-800 mb-6">Contact information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-sage-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-forest-800 mb-1">Email</p>
+                                <a href="mailto:sandragrewal.speechtherapy@gmail.com" class="text-sage-600 hover:text-sage-700 text-sm">sandragrewal.speechtherapy@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-sage-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-forest-800 mb-1">Phone</p>
+                                <a href="tel:07935458460" class="text-sage-600 hover:text-sage-700">07935458460</a>
+                            </div>
+                        </div>
+
+                        <a href="https://www.instagram.com/growingvoiceschelmsford" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 rounded-2xl p-3 -mx-3 bg-apricot-100 hover:bg-apricot-200 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                            <div class="w-12 h-12 bg-apricot-300 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-apricot-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-forest-800">Instagram</p>
+                                <p class="text-forest-700 text-sm">Follow us on Instagram</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Get in touch callout -->
+                <div class="bg-sage-500 rounded-3xl p-8 text-white flex flex-col justify-center">
+                    <h3 class="font-serif-display text-2xl mb-4">Get in touch to book a consultation.</h3>
+                    <a href="mailto:sandragrewal.speechtherapy@gmail.com?subject=Consultation%20Request" class="inline-block bg-white hover:bg-cream-100 text-forest-700 px-8 py-4 rounded-full font-medium transition-all hover:shadow-xl text-center">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Association logos -->
+            <div class="flex items-center justify-center gap-6 mb-10">
+                <img src="./hcpc-registered-logo.webp" alt="HCPC Registered" class="h-16 bg-white rounded-lg p-1">
+                <img src="./rcslt-logo-blue-bg.png" alt="Royal College of Speech and Language Therapists" class="h-16 rounded-lg">
+                <img src="./ASLTIP-MEMBER-LOGO-transparent.png" alt="ASLTIP Member" class="h-16 bg-white rounded-lg p-1">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="font-serif-display text-2xl mb-1">Growing Voices</p>
+                    <p class="text-sage-300 text-sm">Sandra Grewal · Speech & Language Therapist</p>
+                </div>
+
+                <div class="md:text-right">
+                    <div class="flex flex-wrap md:justify-end gap-4 md:gap-6">
+                        <a href="#hero" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">Home</a>
+                        <a href="#about" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">About</a>
+                        <a href="#expect" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">Services</a>
+                        <a href="#prices" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">Pricing</a>
+                        <a href="#faq" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">FAQ</a>
+                        <a href="#contact" class="text-sage-300 hover:text-apricot-300 transition-colors text-sm">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-forest-700 mt-8 pt-8 text-center">
+                <p class="text-sage-400 text-sm">&copy; 2026 Growing Voices Speech & Language Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for all anchor links (backup for browsers without CSS scroll-smooth support)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
