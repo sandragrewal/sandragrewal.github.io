@@ -213,8 +213,8 @@
                 </a>
 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-forest-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-forest-700" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
@@ -242,6 +242,7 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-sage-50 pt-24 pb-20 lg:pt-0 lg:pb-0">
         <!-- Decorative elements -->
@@ -435,7 +436,7 @@
                 <div class="max-w-4xl mx-auto flex flex-col items-center">
                     <!-- Step 1 -->
                     <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
-                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">1. Complimentary telephone consultation</h4>
+                        <h3 class="font-serif-display text-xl text-forest-800 mb-3">1. Complimentary telephone consultation</h3>
                         <p class="text-forest-700/80">After contact is made there will be a Complimentary telephone consultation to discuss your initial concerns and how speech and language therapy may help. This is also an opportunity to talk through the available options and next steps, ensuring you feel informed and supported from the outset   .</p>
                     </div>
 
@@ -448,7 +449,7 @@
 
                     <!-- Step 2 -->
                     <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
-                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">2. Initial Assessment</h4>
+                        <h3 class="font-serif-display text-xl text-forest-800 mb-3">2. Initial Assessment</h3>
                         <p class="text-forest-700/80">We will then schedule an initial assessment at your home tailored to your child's needs. These take about an hour and will involve gathering information from you, observing your child's speech and language during play and completing formal and informal assessments. I will provide you with a summary report and recommendations following the assessment.</p>
                     </div>
 
@@ -461,7 +462,7 @@
 
                     <!-- Step 3 -->
                     <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
-                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">3a. Therapy Sessions</h4>
+                        <h3 class="font-serif-display text-xl text-forest-800 mb-3">3a. Therapy Sessions</h3>
                         <p class="text-forest-700/80">Together we will decide whether therapy is appropriate and agree a set of targets for your child that will form the basis of therapy, taking into account their needs, readiness, and motivation. There is no requirement to commit to a set number of sessions, allowing flexibility based on your child’s progress and your family’s needs. I will recommend the number and frequency of sessions and keep you updated on progress, adjusting plans where needed. Sessions last 30–45 minutes and are designed to be fun and engaging to support learning.</p>
 
                         <div class="flex items-center my-6">
@@ -470,7 +471,7 @@
                             <div class="flex-1 border-t border-sage-300"></div>
                         </div>
 
-                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">3b. Review</h4>
+                        <h3 class="font-serif-display text-xl text-forest-800 mb-3">3b. Review</h3>
                         <p class="text-forest-700/80">If therapy is not appropriate at this time, or you feel comfortable following advice independently, a review session can be arranged after an agreed period to monitor progress, review targets, and provide updated advice where needed. This can be offered upon request or to provide a more up-to-date report.</p>
                     </div>
 
@@ -483,7 +484,7 @@
 
                     <!-- Step 4 -->
                     <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full">
-                        <h4 class="font-serif-display text-xl text-forest-800 mb-3">4. Working with Others</h4>
+                        <h3 class="font-serif-display text-xl text-forest-800 mb-3">4. Working with Others</h3>
                         <div class="text-forest-700/80 space-y-4">
                             <p>If your child is known to an NHS Speech and Language Therapist or other professionals, including education staff, please let me know so we can work collaboratively. I will liaise with relevant professionals to support continuity of care. Any meetings or calls with other professionals will be agreed with you in advance and charged as outlined in the fee schedule.</p>
                         </div>
@@ -747,6 +748,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-forest-800 text-white py-12">
@@ -787,14 +789,21 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
+        function setMobileMenuState(isOpen) {
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        }
+
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isOpen = mobileMenu.classList.contains('hidden');
+            setMobileMenuState(isOpen);
         });
 
         // Close mobile menu when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                setMobileMenuState(false);
             });
         });
 
