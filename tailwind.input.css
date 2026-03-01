@@ -1,3 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "./index.html";
+
+@theme {
+  --color-sage-50: #f6f7f4;
+  --color-sage-100: #e8ebe3;
+  --color-sage-200: #d4dbc9;
+  --color-sage-300: #b5c2a4;
+  --color-sage-400: #96a87f;
+  --color-sage-500: #7a8f62;
+  --color-sage-600: #5f724c;
+  --color-sage-700: #4b5a3d;
+  --color-sage-800: #3e4a34;
+  --color-sage-900: #353f2e;
+
+  --color-cream-50: #fdfcf9;
+  --color-cream-100: #faf8f1;
+  --color-cream-200: #f5f0e3;
+  --color-cream-300: #ede5d0;
+  --color-cream-400: #e2d5b8;
+
+  --color-forest-600: #3d5a45;
+  --color-forest-700: #2f4736;
+  --color-forest-800: #243528;
+
+  --color-apricot-50: #fef9f6;
+  --color-apricot-100: #fdf2eb;
+  --color-apricot-200: #fbe5d6;
+  --color-apricot-300: #f7d0b8;
+  --color-apricot-400: #f2b896;
+  --color-apricot-500: #e9a07a;
+  --color-apricot-600: #d4845c;
+}
